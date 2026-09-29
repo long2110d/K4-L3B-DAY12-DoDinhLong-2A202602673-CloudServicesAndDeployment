@@ -6,10 +6,9 @@
 > **Chỉ ghi TÊN biến môi trường, tuyệt đối không dán giá trị API key vào đây.**
 > Repo này công khai — dán khóa vào là mất khóa.
 
-**Trạng thái: chưa deploy lên cloud, CP5 chưa hoàn tất.** Cấu hình Render
-Blueprint đã được chuẩn bị. Phiên làm việc hiện chưa có trình duyệt kết nối
-để truy cập tài khoản cloud, Railway CLI hoặc Docker để chạy fallback.
-Chưa có Public URL, output HTTP từ cloud hoặc ảnh chụp xác minh.
+**Trạng thái: đã gửi deployment lên Railway, đang chờ xác minh HTTP.**
+Redis được tạo trước, sau đó ứng dụng được upload từ mã nguồn local bằng CLI.
+Project: `responsible-vibrancy`. Chưa có ảnh chụp xác minh.
 
 ## Thông Tin Học Viên
 
@@ -23,9 +22,9 @@ Chưa có Public URL, output HTTP từ cloud hoặc ảnh chụp xác minh.
 
 | Mục | Nội dung |
 |-----|----------|
-| Public URL | https://TODO-thay-bang-url-that.up.railway.app |
-| Platform | Render — dự kiến, chưa triển khai |
-| Ngày deploy | (điền ngày) |
+| Public URL | https://k4-l3b-day12-dodinhlong-2a202602673-cloudservice-production.up.railway.app |
+| Platform | Railway |
+| Ngày deploy | 2026-09-29 (UTC), đã gửi deployment; đang chờ xác minh |
 
 ## Biến Môi Trường Đã Set Trên Cloud
 
@@ -33,12 +32,12 @@ Ghi tên biến và **nguồn giá trị**, không ghi giá trị:
 
 | Biến | Đã set | Ghi chú |
 |------|--------|---------|
-| `PORT` | Chưa xác minh | platform tự gán, không ghi đè |
-| `AGENT_API_KEY` | Chưa set trên cloud | nhập khi tạo Blueprint, `sync: false` |
-| `REDIS_URL` | Chưa set trên cloud | Blueprint liên kết connectionString của Render Key Value |
-| `RATE_LIMIT_PER_MINUTE` | Đã khai báo trong Blueprint | 10; chưa deploy |
-| `MONTHLY_BUDGET_USD` | Đã khai báo trong Blueprint | 10.0; chưa deploy |
-| `LOG_LEVEL` | Đã khai báo trong Blueprint | INFO; chưa deploy |
+| `PORT` | Platform quản lý | không ghi đè; Docker CMD đọc PORT |
+| `AGENT_API_KEY` | Đã set | Railway Variables, không ghi giá trị vào repo |
+| `REDIS_URL` | Đã set | tham chiếu `${{Redis.REDIS_URL}}` |
+| `RATE_LIMIT_PER_MINUTE` | Đã set | 10 |
+| `MONTHLY_BUDGET_USD` | Đã set | 10.0 |
+| `LOG_LEVEL` | Đã set | INFO |
 
 ## Lệnh Kiểm Tra
 
@@ -78,7 +77,7 @@ done; echo
 Dán output của các lệnh trên vào đây:
 
 ```
-(điền output)
+Đang chờ deployment sẵn sàng để ghi output HTTP thực tế.
 ```
 
 ## Ảnh Chụp Màn Hình
@@ -102,5 +101,5 @@ Không đăng ký được tài khoản cloud? Vẫn nộp được bài, nhưng
 5. Ghi rõ lý do không deploy được vào phần dưới đây:
 
 ```
-(điền lý do nếu dùng phương án dự phòng, ngược lại xóa mục này)
+Không dùng local fallback. Triển khai trên Railway.
 ```
