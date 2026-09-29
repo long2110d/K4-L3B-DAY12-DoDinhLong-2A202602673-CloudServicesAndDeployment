@@ -6,20 +6,25 @@
 > **Chỉ ghi TÊN biến môi trường, tuyệt đối không dán giá trị API key vào đây.**
 > Repo này công khai — dán khóa vào là mất khóa.
 
+**Trạng thái: chưa deploy lên cloud, CP5 chưa hoàn tất.** Cấu hình Render
+Blueprint đã được chuẩn bị. Phiên làm việc hiện chưa có trình duyệt kết nối
+để truy cập tài khoản cloud, Railway CLI hoặc Docker để chạy fallback.
+Chưa có Public URL, output HTTP từ cloud hoặc ảnh chụp xác minh.
+
 ## Thông Tin Học Viên
 
 | Mục | Nội dung |
 |-----|----------|
-| Họ và tên | (điền họ tên) |
-| Mã học viên | (điền mã học viên) |
-| Repo | (điền link repo K4-L3B-DAY12-HoVaTen-MSSV-CloudServicesAndDeployment) |
+| Họ và tên | Đỗ Đình Long (theo tên repository) |
+| Mã học viên | 2A202602673 |
+| Repo | https://github.com/long2110d/K4-L3B-DAY12-DoDinhLong-2A202602673-CloudServicesAndDeployment |
 
 ## Service
 
 | Mục | Nội dung |
 |-----|----------|
 | Public URL | https://TODO-thay-bang-url-that.up.railway.app |
-| Platform | Railway / Render / Cloud Run — (điền platform bạn dùng) |
+| Platform | Render — dự kiến, chưa triển khai |
 | Ngày deploy | (điền ngày) |
 
 ## Biến Môi Trường Đã Set Trên Cloud
@@ -28,12 +33,12 @@ Ghi tên biến và **nguồn giá trị**, không ghi giá trị:
 
 | Biến | Đã set | Ghi chú |
 |------|--------|---------|
-| `PORT` | ✅ | platform tự gán |
-| `AGENT_API_KEY` | ✅ | đặt trong dashboard, không nằm trong repo |
-| `REDIS_URL` | ✅ | (điền: Redis add-on của platform / Upstash / ...) |
-| `RATE_LIMIT_PER_MINUTE` | ✅ | 10 |
-| `MONTHLY_BUDGET_USD` | ✅ | 10.0 |
-| `LOG_LEVEL` | ✅ | INFO |
+| `PORT` | Chưa xác minh | platform tự gán, không ghi đè |
+| `AGENT_API_KEY` | Chưa set trên cloud | nhập khi tạo Blueprint, `sync: false` |
+| `REDIS_URL` | Chưa set trên cloud | Blueprint liên kết connectionString của Render Key Value |
+| `RATE_LIMIT_PER_MINUTE` | Đã khai báo trong Blueprint | 10; chưa deploy |
+| `MONTHLY_BUDGET_USD` | Đã khai báo trong Blueprint | 10.0; chưa deploy |
+| `LOG_LEVEL` | Đã khai báo trong Blueprint | INFO; chưa deploy |
 
 ## Lệnh Kiểm Tra
 
